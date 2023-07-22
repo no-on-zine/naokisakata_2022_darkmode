@@ -1,0 +1,33 @@
+@use "../global/index"as*;
+
+.archives {
+    display: none;
+
+    @include mq(md) {
+        display: block;
+        position: sticky;
+        top: 15vh;
+        overflow-y: scroll;
+        height: 70vh;
+        min-height: 500px;
+        width: 25%;
+        font-family: $futura;
+    }
+
+    .sticky {
+        div {
+            &:first-child {
+                margin: 0 0 5rem;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                font-size: 1.8rem;
+                letter-spacing: 0.1rem;
+                padding: 0 0 0 2rem;
+            }
+        }
+    }
+}

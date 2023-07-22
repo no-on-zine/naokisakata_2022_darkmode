@@ -1,0 +1,33 @@
+@use"../global/index"as*;
+
+#fancybox-content {
+    border-bottom-width: 60px !important;
+}
+
+#fancybox-title-over {
+    padding: 0 !important;
+    background: none !important;
+    color: #000 !important;
+    font-size: 12px !important;
+    line-height: 1em;
+    letter-spacing: 0.01em;
+
+    @include mq() {
+        font-size: 14px !important;
+        line-height: 1.5em;
+        letter-spacing: 0.01em;
+    }
+}
+
+#fancybox-title.fancybox-title-over {
+    bottom: 20px !important;
+
+    @include mq() {
+        bottom: 21px !important;
+    }
+}
+
+#fancybox-left-ico,
+#fancybox-right-ico {
+    top: 40% !important;
+}

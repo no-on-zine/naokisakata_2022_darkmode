@@ -1,0 +1,98 @@
+@use "../global/index"as*;
+
+div#cat_m {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    transform: translate(0, 51vh);
+    transition: .4s;
+    max-height: 75vh;
+    overflow-y: scroll;
+
+    @include mq(md) {
+        display: none;
+    }
+
+    .cat_l_sp_btn {
+        .cat_l_sp_btn_txt {
+            span {
+                height: 7rem;
+                width: 7rem;
+                background: rgba(60, 60, 60, 0.9);
+                color: #fff;
+                border-radius: 50%;
+                font-size: 1.3rem;
+                @include flex($jc:center);
+                margin: 0 1rem 2rem auto;
+
+                @include mq {
+                    height: 10rem;
+                    width: 10rem;
+                    margin: 0 3rem 4rem auto;
+                    font-size: 1.8rem;
+                }
+
+                &.cat_close {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .cat_l_sp.archives {
+        display: flex;
+        background: rgb(255, 255, 255);
+        margin: 0;
+        box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.3);
+        padding: 0;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        height: 50vh;
+        padding: 3rem 5rem;
+        font-family: $futura, $noto, sans-serif;
+        font-weight: 500;
+
+        @include mq {
+            letter-spacing: 0.1rem;
+            font-size: 2rem;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            @include mq {
+                gap: 3rem;
+            }
+
+            &:first-child {
+                flex: 2;
+            }
+
+            &:last-child {
+                flex: 1;
+            }
+        }
+    }
+
+    &.active {
+        transform: translate(0, 0);
+
+        .cat_l_sp_btn {
+            .cat_l_sp_btn_txt {
+                span {
+                    &.cat_cat {
+                        display: none;
+                    }
+
+                    &.cat_close {
+                        display: flex;
+                    }
+                }
+            }
+        }
+    }
+
+
+}

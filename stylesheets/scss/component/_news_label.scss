@@ -1,0 +1,70 @@
+@use "../global/index"as*;
+
+.label {
+    font-size: 1.2rem;
+    letter-spacing: .2rem;
+    margin: 0 0 1rem;
+
+}
+
+.label span {
+    padding: .6rem 2.5rem;
+    min-width: 14rem;
+    display: inline-block;
+    text-align: center;
+    font-weight: 500;
+}
+
+.nextconcerts_jp span,
+.prochainsconcerts_fr span,
+.nextconcerts_en span {
+    border: 2px solid #FF00C4;
+}
+
+.pastconcerts_jp span,
+.concertspasses_fr span,
+.pastconcerts_en span {
+    border: 2px solid #00FF00;
+}
+
+.broadcasts_jp span,
+.diffusions_fr span,
+.broadcasts_en span {
+    border: 2px solid #FF7F00;
+}
+
+.projects_jp span,
+.projets_fr span,
+.projects_en span {
+    border: 2px solid #00FFFF;
+}
+
+.publishings_jp span,
+.editions_fr span,
+.publishings_en span {
+    border: 2px solid #FF0000;
+}
+
+.teaching_jp span,
+.enseignement_fr span,
+.teaching_en span {
+    border: 2px solid #1600C3;
+}
+
+.awards_jp span,
+.prix_fr span,
+.awards_en span {
+    border: 2px solid #F5FF00;
+}
+
+.articles_jp span,
+.articles_fr span,
+.articles_en span {
+    border: 2px solid #A301C9;
+}
+
+.others_jp span,
+.autres_fr span,
+.others_en span {
+    border: 2px solid #9D9D9D;
+}

@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+th#expirationdate {
+    width: 10%;
+}
+
+th#WP_PostMemo {
+    width: 20%;
+}
+
+th#title {
+    width: 50%;
+}
+
+.editor-post-taxonomies__hierarchical-terms-list {
+    max-height: 90em;
+}
+
+#post-expirator-cat-list.wp-tab-panel {
+    max-height: 1400px;
+}
+
+.post-type-post .edit-post-visual-editor .editor-post-title__block::after {
+    content: "アルファベットは « Sombrer dans le mirage » のように半角括弧の両側に半角スペース。邦題は《あ》のように全角括弧はスペースなし。";
+    display: block;
+    font-size: 13px;
+		font-style: italic;
+		color: #666;
+		font-family: "Helvetica Neue",sans-serif;
+}

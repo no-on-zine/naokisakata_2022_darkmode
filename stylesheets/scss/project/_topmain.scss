@@ -1,0 +1,189 @@
+@use "../global/index"as *;
+
+header {
+    &.p_header.header {
+        display: none;
+    }
+}
+
+section#top_main {
+    div#main_img {
+        position: relative;
+        font-family: $futura;
+        font-size: 2rem;
+        letter-spacing: .2rem;
+        font-weight: 500;
+
+        .score_01 {
+            background: url('#{$rd}top/score_01.jpg')50% 50%/200%;
+            height: 100vh;
+            width: 100%;
+            @include tr;
+
+            @include mq {
+                background-attachment: fixed;
+                background-size: 100%;
+                background-position: 60% 25%;
+            }
+        }
+
+        .lang {
+            display: none;
+
+            @include mq(md) {
+                display: flex;
+                position: absolute;
+                top: 5vh;
+                right: 5vw;
+                background: #fff;
+                padding: 2rem 3rem;
+                box-shadow: 0px 5px 5px 0 rgb(0 0 0 / 5%);
+            }
+
+            ul {
+                @include flex($jc:flex-end);
+                gap: 1.3rem;
+
+                li {
+                    @include flex;
+                    gap: 1.3rem;
+
+                    &:first-child {
+                        &::after {
+                            content: "";
+                            height: 1rem;
+                            width: 0.1rem;
+                            display: flex;
+                            background: #000;
+
+                        }
+                    }
+                }
+            }
+        }
+
+        div#top_menu {
+            display: none;
+
+            @include mq(md) {
+                display: block;
+                position: absolute;
+                top: 50%;
+                right: 0;
+                width: clamp(500px, 50vw, 650px);
+                background: #fff;
+                padding: 7rem;
+                transform: translate(0, -50%);
+                box-shadow: 0px 5px 5px 0 rgb(0 0 0 / 5%);
+            }
+
+            &.lang_fr {
+                @include mq(md) {
+                    width: clamp(500px, 60vw, 680px);
+                }
+            }
+
+            .logo {
+                width: clamp(200px, 30vw, 400px);
+                margin: 0 0 2rem;
+
+            }
+
+            ul.gnav {
+                @include flex($jc:flex-start);
+                gap: 1.3rem;
+
+                li {
+                    @include flex;
+                    gap: 1.3rem;
+
+                    &:nth-of-type(-n+5) {
+                        &::after {
+                            content: "";
+                            height: 1rem;
+                            width: 0.1rem;
+                            display: flex;
+                            background: #000;
+                        }
+                    }
+
+                    &:nth-of-type(n+7) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#container {
+    section#c_1 {
+        div#view_a {
+            a {
+                display: flex;
+                width: clamp(150px, 10vw, 300px);
+                margin: 0 0 0 auto;
+
+                img {
+                    @include tr;
+                }
+            }
+        }
+    }
+}
+
+html[theme="dark"] {
+    section#top_main {
+        div#main_img {
+            .score_01 {
+                @include f($i:0.95, $g:0.5);
+            }
+
+            .lang {
+                background: $bg_d_2 +e6;
+
+                ul {
+                    li {
+                        &:first-child {
+                            &::after {
+                                background: $tx_d_2;
+                            }
+                        }
+                    }
+                }
+            }
+
+            div#top_menu {
+                background: $bg_d_2 +e6;
+
+                .logo {
+                    img {
+                        @include f;
+                    }
+                }
+
+                ul.gnav {
+                    li {
+                        &:nth-of-type(-n+5) {
+                            &::after {
+                                background: $tx_d_2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #container {
+        section#c_1 {
+            div#view_a {
+                a {
+                    img {
+                        @include f;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,54 @@
+@use "../global/index"as*;
+
+table {
+    width: 100%;
+
+    tbody {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+
+        tr {
+            @include mq(md) {
+                display: flex;
+                width: 100%;
+            }
+
+            td {
+                padding: 2rem 1rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                &.t_item {
+                    background: #eee;
+                    align-items: center;
+                    font-weight: 500;
+                    font-family: $futura, $noto, sans-serif;
+                    letter-spacing: 0.1rem;
+                    font-size: 1.8rem;
+                    text-align: center;
+
+                    @include mq {
+                        font-size: 2.2rem;
+                        font-weight: 400;
+                    }
+
+                    @include mq(md) {
+                        flex: 1;
+                    }
+                }
+
+                &.t_detail {
+                    @include mq(md) {
+                        flex: 3;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.jp table tbody tr td.t_item {
+    font-size: 1.8rem;
+}

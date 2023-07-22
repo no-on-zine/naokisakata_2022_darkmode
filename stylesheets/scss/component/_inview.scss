@@ -1,0 +1,12 @@
+.list-mv07,
+.list-mv08 {
+    transition: .8s;
+    opacity: 0;
+    transform: translate(0, 20px);
+}
+
+.mv07,
+.mv08 {
+    opacity: 1.0;
+    transform: translate(0, 0);
+}

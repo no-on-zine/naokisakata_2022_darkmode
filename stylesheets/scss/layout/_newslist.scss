@@ -1,0 +1,67 @@
+@use "../global/index"as *;
+
+.news_l.list {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    &.top-page {
+        @include mq(md) {
+            display: grid;
+            gap: 10rem;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    &.archive-page,
+    &.page,
+    &.work_l,
+    &.works_detail {
+        @include mq(md) {
+            width: 70%;
+        }
+    }
+
+    .post {
+        border-bottom: .1rem solid #aaa;
+        padding: 0 0 4rem;
+
+        &:last-child {
+            border: none;
+        }
+
+        &.top_page {
+            &:nth-last-of-type(-n+2) {
+                @include mq(md) {
+                    border: none;
+                }
+            }
+        }
+
+        .post_h {
+            font-family: $futura;
+        }
+
+        a.post_t {
+            .date_f {
+                font-size: 1.4rem;
+                font-family: $futura;
+                letter-spacing: .1rem;
+                margin: 0 0 1rem;
+                font-weight: 500;
+            }
+
+            .post_name {
+                font-size: 2rem;
+                font-family: $futura, $noto, sans-serif;
+                letter-spacing: 0.1rem;
+                margin: 0 0 1rem;
+                font-weight: 500;
+            }
+
+            .comment_f {
+                font-size: 1.4rem;
+            }
+        }
+    }
+}

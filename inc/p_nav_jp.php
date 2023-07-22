@@ -1,0 +1,1 @@
+<?php include("m_nav_jp.php"); ?>

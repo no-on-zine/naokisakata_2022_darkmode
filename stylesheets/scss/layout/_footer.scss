@@ -1,0 +1,25 @@
+@use "../global/index"as *;
+
+footer {
+    div#footer_wrap {
+        &::before {
+            display: block;
+            height: 1px;
+            width: 80%;
+            background: #eee;
+            content: "";
+            margin: auto;
+        }
+
+        div#copy_r {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30rem;
+            font-family: $futura;
+            letter-spacing: 0.15rem;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+    }
+}

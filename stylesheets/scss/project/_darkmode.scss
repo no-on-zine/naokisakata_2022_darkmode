@@ -1,0 +1,115 @@
+@use "../global/index"as*;
+
+
+html[theme="dark"] {
+
+    body {
+        background: $bg_d_2;
+        color: $tx_d_2;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: $tx_d_2;
+        }
+
+        .label span {
+            @include f($i:0, $g:0.5, $h:0);
+        }
+
+        .teaching_jp span,
+        .enseignement_fr span,
+        .teaching_en span {
+            border-color: #3043ff;
+            filter: invert(0) grayscale(0.3) hue-rotate(0);
+        }
+
+        .acf-map {
+            @include f($g:0.7);
+        }
+
+        .page_content {
+            iframe[src*="soundcloud"] {
+                @include f($g:0.5);
+            }
+
+            iframe[src*="youtube"] {
+                @include f($i:0, $g:0.5, $h:0);
+            }
+        }
+
+        .cat_l_sp.archives {
+            background: rgba(60, 60, 60, .9);
+        }
+
+        header {
+            &.p_header {
+                &.header.clone-nav {
+                    background: $bg_d_2 +e6;
+                }
+
+                .header_wrap {
+                    nav.p_header_nav {
+                        .lang {
+                            ul {
+                                li {
+                                    &:first-child {
+                                        &::after {
+                                            background: $tx_d_2;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        ul.gnav {
+                            li {
+                                &:nth-of-type(-n+5) {
+                                    &::after {
+                                        background: $tx_d_2;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .header_logo {
+                h1 {
+                    a {
+                        @include f;
+                    }
+                }
+            }
+
+            &.m_header {
+                background: $bg_d_2+e6;
+
+                .sp_menu {
+                    color: $tx_d_2;
+                }
+
+                .m_header_nav {
+                    background: $bg_d_2 +e6;
+                    color: $tx_d_2;
+                }
+            }
+        }
+
+        table {
+            tbody {
+                tr {
+                    td {
+                        &.t_item {
+                            background: $bg_d_3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

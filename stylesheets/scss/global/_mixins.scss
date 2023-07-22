@@ -1,0 +1,16 @@
+@use "../global/variables";
+
+@mixin flex($fw:nowrap, $jc:space-between, $ai:center) {
+    display: flex;
+    flex-wrap: $fw;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+@mixin tr {
+    transition: .5s;
+}
+
+@mixin f($i:1, $g:0, $h:180deg) {
+    filter: invert($i) grayscale($g) hue-rotate($h);
+}

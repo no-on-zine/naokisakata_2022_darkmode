@@ -1,0 +1,217 @@
+@use "../global/index"as *;
+
+div#page {
+    section#page_main {
+        div#main_img {
+            .score_02 {
+                background: url('#{$rd}page/score_02.jpg') center/150%;
+                height: 40vh;
+
+                @include mq(md) {
+                    background-attachment: fixed;
+                    background-size: 70%;
+                    background-position: 0 0;
+                }
+            }
+
+            .score_06 {
+                background: url('#{$rd}page/score_06.jpg') 0 0/170%;
+                height: 40vh;
+
+                @include mq(md) {
+                    background-attachment: fixed;
+                    background-size: 80%;
+                    background-position: 0 0;
+                }
+            }
+        }
+    }
+
+    div#container {
+        section#c_1 {
+
+            .page_content {
+                .view_a {
+                    a {
+                        display: flex;
+                        justify-content: flex-end;
+
+                        img {
+                            max-width: 12rem;
+                        }
+                    }
+                }
+
+                &.al {
+                    text-align: justify;
+
+                    .portrait {
+                        @include mq(md) {
+                            float: right;
+                            width: 40%;
+                            margin: 0 0 5rem 5rem;
+
+                            &::after {
+                                content: "";
+                                display: block;
+                                clear: both;
+                            }
+                        }
+
+                    }
+                }
+
+                p {
+                    font-size: 1.4rem;
+                    letter-spacing: 0.05rem;
+                    line-height: 1.7;
+                    margin: 0 auto 3rem;
+
+                    @include mq {
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+
+            .contact_wrap {
+                @include mq(md) {
+                    @include flex($ai:flex-start);
+                }
+
+                .contact_d {
+                    margin: 0 0 4rem;
+
+                    @include mq(md) {
+                        width: 40%;
+                    }
+                }
+
+                .contact_f {
+                    @include mq(md) {
+                        width: 50%;
+                    }
+
+                    .wpcf7 {
+                        form {
+                            .contact_l {
+                                margin: 0 0 2rem;
+
+                                >p {
+                                    &:first-child {
+                                        margin: 0 0 0.5rem;
+                                    }
+                                }
+
+                                input {
+                                    border: 1px solid #aaa;
+                                    width: 100%;
+                                    height: 4rem;
+                                    padding: 0 1rem;
+                                }
+
+                                textarea {
+                                    border: 1px solid #aaa;
+                                    width: 100%;
+                                    padding: 1rem;
+                                }
+                            }
+
+                            .a_center {
+                                text-align: center;
+
+                                input {
+                                    max-width: 20rem;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .inv-recaptcha-holder {
+                    .grecaptcha-badge {
+                        margin: 6rem auto 0;
+                        box-shadow: none !important;
+                        transform: scale(0.6);
+                    }
+                }
+            }
+
+            section#error {
+                .e_m {
+                    p {
+                        font-size: 2rem;
+                        margin: 0 0 3rem;
+                    }
+                }
+
+                div#link {
+                    ul {
+                        li {
+                            margin: 0 0 2rem 1rem;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+html[theme="dark"] {
+    div#page {
+        section#page_main {
+            div#main_img {
+                .score_02 {
+                    @include f($i:0.95, $g:0.5);
+                }
+
+                .score_06 {
+                    @include f($i:0.95, $g:0.5);
+                }
+            }
+        }
+
+        div#container {
+            section#c_1 {
+                .page_content {
+                    .view_a {
+                        a {
+                            img {
+                                @include f;
+                            }
+                        }
+                    }
+
+                    &.al {
+                        .portrait {
+                            img {
+                                @include f($i:0, $g:0.5, $h:0);
+                            }
+                        }
+                    }
+                }
+
+                .contact_wrap {
+                    @include mq(md) {
+                        @include flex($ai:flex-start);
+                    }
+
+                    .contact_d {
+                        margin: 0 0 4rem;
+
+                        @include mq(md) {
+                            width: 40%;
+                        }
+                    }
+
+                    .inv-recaptcha-holder {
+                        .grecaptcha-badge {
+                            @include f($i:0, $g:1, $h:0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
